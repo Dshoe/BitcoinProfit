@@ -89,4 +89,84 @@
         android:layout_alignStart="@+id/etUsd"
         android:text="@string/hint_usd" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/label_estimated_gdm"
+        android:id="@+id/tvGdm"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvGdmOut"
+        android:layout_alignTop="@+id/tvGdm"
+        android:layout_alignRight="@+id/etMinerCost"
+        android:layout_alignEnd="@+id/etMinerCost" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/label_daily_btc"
+        android:id="@+id/tvDailyBtc"
+        android:layout_below="@+id/tvGdm"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvDailyBtcOut"
+        android:layout_alignTop="@+id/tvDailyBtc"
+        android:layout_toLeftOf="@+id/tvGdmOut" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/label_daily_usd"
+        android:id="@+id/tvDailyUsd"
+        android:layout_below="@+id/tvDailyBtc"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvDailyUsdOut"
+        android:layout_alignTop="@+id/tvDailyUsd"
+        android:layout_toLeftOf="@+id/tvDailyBtcOut" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/label_days"
+        android:id="@+id/tvDays"
+        android:layout_below="@+id/tvDailyUsd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvDaysOut"
+        android:layout_alignTop="@+id/tvDays"
+        android:layout_toLeftOf="@+id/tvDailyUsdOut" />
+
 </RelativeLayout>

@@ -7,6 +7,10 @@
     <string name="label_exchange_rate">Exchange rate</string>
     <string name="label_miner_cost">Cost of miner (optional)</string>
     <string name="label_$">$</string>
+    <string name="label_estimated_gdm">Estimated GDM</string>
+    <string name="label_daily_btc">Daily BTC</string>
+    <string name="label_daily_usd">Daily USD</string>
+    <string name="label_days">Days till payed off</string>
     <string name="hint_ghs">Gh/s</string>
     <string name="hint_usd">USD</string>
 
