@@ -23,10 +23,10 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/etGhs"
-        android:text="@string/hint_ghs"
         android:layout_alignBottom="@+id/tvMinerSpeed"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:hint="@string/hint_ghs" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,12 +52,11 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/etUsd"
-        android:hint="USD"
+        android:hint="@string/hint_usd"
         android:layout_marginTop="22dp"
         android:layout_below="@+id/etGhs"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:text="@string/hint_usd" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,7 +86,7 @@
         android:layout_below="@+id/etUsd"
         android:layout_alignLeft="@+id/etUsd"
         android:layout_alignStart="@+id/etUsd"
-        android:text="@string/hint_usd" />
+        android:hint="@string/hint_usd" />
 
     <TextView
         android:layout_width="wrap_content"
