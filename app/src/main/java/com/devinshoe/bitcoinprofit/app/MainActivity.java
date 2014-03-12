@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void ocCalculate(View v) {
         EditText etGhs = (EditText) findViewById(R.id.etGhs);
-        TextView tvDgmOut = (TextView) findViewById(R.id.tvGdmOut);
+        TextView tvDgmOut = (TextView) findViewById(R.id.tvDgmOut);
 
         // check whether the user has entered the Gh/s
         if (!"".equals(etGhs.getText().toString())) {
