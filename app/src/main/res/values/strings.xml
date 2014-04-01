@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">Bitcoin Profit</string>
-    <string name="action_settings">Settings</string>
     <string name="action_calculate">Calculate</string>
     <string name="label_miner_speed">Miner speed</string>
     <string name="label_exchange_rate">Exchange rate</string>
