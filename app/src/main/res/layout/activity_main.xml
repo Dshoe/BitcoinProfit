@@ -143,8 +143,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvDailyBtcOut"
-        android:layout_alignTop="@+id/tvDailyBtc"
-        android:layout_toLeftOf="@+id/tvDgmOut" />
+        android:layout_marginBottom="10dp"
+        android:layout_alignBottom="@+id/tvDailyBtc"
+        android:layout_alignRight="@+id/etMinerCost"
+        android:layout_alignEnd="@+id/etMinerCost" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -163,8 +165,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvDailyUsdOut"
-        android:layout_alignTop="@+id/tvDailyUsd"
-        android:layout_toLeftOf="@+id/tvDailyBtcOut" />
+        android:layout_alignBottom="@+id/tvDailyUsd"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="9dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -183,7 +187,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvDaysOut"
-        android:layout_alignTop="@+id/tvDays"
-        android:layout_toLeftOf="@+id/tvDailyUsdOut" />
+        android:layout_alignBaseline="@+id/tvDays"
+        android:layout_alignBottom="@+id/tvDays"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
