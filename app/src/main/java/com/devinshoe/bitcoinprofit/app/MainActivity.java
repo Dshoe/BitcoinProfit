@@ -1,5 +1,7 @@
 package com.devinshoe.bitcoinprofit.app;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -91,8 +93,28 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        if (id == R.id.action_about) {
+            displayAboutDialog();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void displayAboutDialog() {
+        new AlertDialog.Builder(this)
+            .setTitle("About this app")
+            .setMessage("This application was developed to help Bitcoin miners calculate " +
+                    "their expected profit.\n\n" +
+                    "Calculations are based on results from the Eclipse mining pool.\n\n" +
+                    "All calculations are estimates, and are not guaranteed.\n\n" +
+                    "Developed by Devin Shoemaker\n" +
+                    "v0.0.2")
+            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // continue with delete
+                }
+            })
+            .show();
     }
 
 }
