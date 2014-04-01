@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
             tvDgmOut.setText(Double.toString((double)Math.round(dgm * 1000000000) / 1000000000));
 
             // calculate daily BTC
-            tvDailyBtcOut.setText(Double.toString(dailyBtc));
+            tvDailyBtcOut.setText(Double.toString((double)Math.round(dailyBtc * 1000000000) / 1000000000));
 
             // check whether the user has entered the exchange rate
             if (!"".equals(etUsd.getText().toString())) {
