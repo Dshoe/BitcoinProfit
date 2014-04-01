@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -21,9 +23,11 @@ public class MainActivity extends ActionBarActivity {
         double dailyBtc;
         EditText etGhs = (EditText) findViewById(R.id.etGhs);
         EditText etUsd = (EditText) findViewById(R.id.etUsd);
+        EditText etMinerCost = (EditText) findViewById(R.id.etMinerCost);
         TextView tvDgmOut = (TextView) findViewById(R.id.tvDgmOut);
         TextView tvDailyBtcOut = (TextView) findViewById(R.id.tvDailyBtcOut);
         TextView tvDailyUsdOut = (TextView) findViewById(R.id.tvDailyUsdOut);
+        TextView tvDaysOut = (TextView) findViewById(R.id.tvDaysOut);
 
         // check whether the user has entered the Gh/s
         if (!"".equals(etGhs.getText().toString())) {
@@ -51,6 +55,23 @@ public class MainActivity extends ActionBarActivity {
 
                 // set USD to TextView
                 tvDailyUsdOut.setText("$" + Double.toString((double)Math.round(dailyUsd * 100) / 100));
+
+                if (!"".equals(etMinerCost.getText().toString())) {
+                    // declare the cost of miner and return on investment
+                    double minerCost;
+                    int returnOnInvest;
+                    String strReturnOnInvest;
+                    NumberFormat daysFormat = NumberFormat.getInstance();
+                    daysFormat.setMaximumFractionDigits(2);
+
+                    // initialize the cost of miner and calculate return on investment
+                    minerCost = Double.parseDouble(etMinerCost.getText().toString());
+                    returnOnInvest = (int) Math.floor(minerCost / dailyUsd);
+                    strReturnOnInvest = Integer.toString(Math.round(returnOnInvest));
+
+                    // set return on investment to text view
+                    tvDaysOut.setText(strReturnOnInvest + " days");
+                }
             }
         }
     }
