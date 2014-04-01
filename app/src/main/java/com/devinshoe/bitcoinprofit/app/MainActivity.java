@@ -32,10 +32,11 @@ public class MainActivity extends ActionBarActivity {
         // check whether the user has entered the Gh/s
         if (!"".equals(etGhs.getText().toString())) {
             // declare and initialize variables for Gh/s and DGM
-            double ghs, dgm;
+            double ppsRate, ghs, dgm;
 
+            ppsRate = 0.0000000047434914;
             ghs = Double.parseDouble(etGhs.getText().toString());
-            dgm = ghs * 0.000040768; // average DGM
+            dgm = ((ppsRate * 0.85) * ghs) * 10000; // average DGM
             dailyBtc = dgm * 3; // average daily BTC
 
             // set DGM to TextView
