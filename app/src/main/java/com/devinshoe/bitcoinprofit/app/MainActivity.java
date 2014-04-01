@@ -50,7 +50,7 @@ public class MainActivity extends ActionBarActivity {
                 dailyUsd = dailyBtc * exchangeRate;
 
                 // set USD to TextView
-                tvDailyUsdOut.setText(Double.toString((double)Math.round(dailyUsd * 100) / 100));
+                tvDailyUsdOut.setText("$" + Double.toString((double)Math.round(dailyUsd * 100) / 100));
             }
         }
     }
