@@ -11,7 +11,7 @@
     <string name="label_estimated_dgm">Estimated DGM</string>
     <string name="label_daily_btc">Daily BTC</string>
     <string name="label_daily_usd">Daily USD</string>
-    <string name="label_days">Days till payed off</string>
+    <string name="label_days">Return on investment</string>
     <string name="hint_ghs">Gh/s</string>
     <string name="hint_usd">USD</string>
 
