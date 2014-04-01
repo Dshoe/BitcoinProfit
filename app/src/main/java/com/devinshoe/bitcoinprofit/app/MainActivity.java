@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
             double ghs, dgm;
 
             ghs = Double.parseDouble(etGhs.getText().toString());
-            dgm = ghs * 0.000064179; // average DGM
+            dgm = ghs * 0.000040768; // average DGM
             dailyBtc = dgm * 3; // average daily BTC
 
             // set DGM to TextView
