@@ -1,0 +1,5 @@
+v0.0.3
+- Update PPS rate for recent difficulty increase
+
+v0.0.2
+- Calculate DGM based on PPS rate

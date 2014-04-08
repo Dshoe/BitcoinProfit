@@ -1,7 +1,10 @@
 package com.devinshoe.bitcoinprofit.app;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.AssetManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,8 +12,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
 import java.text.NumberFormat;
+import java.util.Scanner;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -97,24 +111,66 @@ public class MainActivity extends ActionBarActivity {
             displayAboutDialog();
             return true;
         }
+        if (id == R.id.action_changelog) {
+            displayChangelogDialog();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
     private void displayAboutDialog() {
         new AlertDialog.Builder(this)
-            .setTitle("About this app")
-            .setMessage("This application was developed to help Bitcoin miners calculate " +
-                    "their expected profit.\n\n" +
-                    "Calculations are based on results from the Eclipse mining pool.\n\n" +
-                    "All calculations are estimates, and are not guaranteed.\n\n" +
-                    "Developed by Devin Shoemaker\n" +
-                    "v0.0.2")
-            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    // continue with delete
-                }
-            })
-            .show();
+                .setTitle("About this app")
+                .setMessage("This application was developed to help Bitcoin miners calculate " +
+                        "their expected profit.\n\n" +
+                        "Calculations are based on results from the Eclipse mining pool.\n\n" +
+                        "All calculations are estimates, and are not guaranteed.\n\n" +
+                        "Developed by Devin Shoemaker\n" +
+                        "v0.0.2")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .show();
+    }
+
+    private void displayChangelogDialog() {
+        Context context = this;
+        AssetManager am = context.getAssets();
+        InputStream is;
+        // ensure that changelog is available
+        try {
+            is = am.open("changelog");
+            Scanner scanner = new Scanner(is).useDelimiter("\\A");
+            String string = scanner.hasNext() ? scanner.next() : null;
+            scanner.close();
+            // changelog dialog
+            new AlertDialog.Builder(this)
+                    .setTitle("Changelog")
+                    .setMessage(string) // convert changelog to string
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    })
+                    .show();
+        } catch (IOException e) {
+            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+    }
+
+    private static String readFile(String path) throws IOException {
+        FileInputStream stream = new FileInputStream(new File(path));
+        try {
+            FileChannel fc = stream.getChannel();
+            MappedByteBuffer bb = fc.map(FileChannel.MapMode.READ_ONLY, 0, fc.size());
+            return Charset.defaultCharset().decode(bb).toString();
+        }
+        finally {
+            stream.close();
+        }
     }
 
 }
