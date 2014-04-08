@@ -129,7 +129,7 @@ public class MainActivity extends ActionBarActivity {
                         "v0.0.2")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        // continue with delete
+                        // do nothing
                     }
                 })
                 .show();
