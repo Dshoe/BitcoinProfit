@@ -145,7 +145,7 @@ public class MainActivity extends ActionBarActivity {
                 .setTitle("About this app")
                 .setMessage("This application was developed to help Bitcoin miners calculate " +
                         "their expected profit.\n\n" +
-                        "Calculations are based on results from the Eclipse mining pool.\n\n" +
+                        "Calculations are based on personal results from the Eclipse mining pool.\n\n" +
                         "All calculations are estimates, and are not guaranteed.\n\n" +
                         "Developed by Devin Shoemaker\n" +
                         getString(R.string.app_version))
