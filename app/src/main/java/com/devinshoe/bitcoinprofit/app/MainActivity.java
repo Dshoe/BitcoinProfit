@@ -148,7 +148,7 @@ public class MainActivity extends ActionBarActivity {
                         "Calculations are based on results from the Eclipse mining pool.\n\n" +
                         "All calculations are estimates, and are not guaranteed.\n\n" +
                         "Developed by Devin Shoemaker\n" +
-                        "v0.0.2")
+                        getString(R.string.app_version))
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // do nothing
