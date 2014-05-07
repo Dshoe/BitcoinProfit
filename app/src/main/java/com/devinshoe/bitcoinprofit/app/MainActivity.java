@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.res.AssetManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
 
                     // initialize the cost of miner and calculate return on investment
                     minerCost = Double.parseDouble(etMinerCost.getText().toString());
-                    returnOnInvest = (int) Math.floor(minerCost / dailyUsd);
+                    returnOnInvest = calcROI(minerCost, dailyUsd);
                     strReturnOnInvest = Integer.toString(Math.round(returnOnInvest));
 
                     // set return on investment to text view
@@ -91,6 +92,27 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         }
+    }
+
+    private int calcROI(double minerCost, double dailyUsd) {
+        double moneyLeft = minerCost;
+        double avgDifficultyIncrease = 23.16;
+        int returnOnInvestment = 0;
+        int avgDifficultyChange = 12;
+
+        while (moneyLeft > 0) {
+
+            while (avgDifficultyChange > 0) {
+                moneyLeft -= dailyUsd;
+                returnOnInvestment++;
+                avgDifficultyChange--;
+            }
+
+            dailyUsd *= (avgDifficultyIncrease * 0.66);
+            avgDifficultyChange = 12;
+        }
+
+        return returnOnInvestment;
     }
 
     @Override
