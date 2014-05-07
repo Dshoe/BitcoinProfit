@@ -51,7 +51,7 @@ public class MainActivity extends ActionBarActivity {
             // declare and initialize variables for Gh/s and DGM
             double ppsRate, ghs, dgm;
 
-            ppsRate = 0.0000000038808927;
+            ppsRate = 0.0000000029684264;
             ghs = Double.parseDouble(etGhs.getText().toString());
             dgm = ((ppsRate * 0.85) * ghs) * 10000; // average DGM
             dailyBtc = dgm * 3; // average daily BTC
