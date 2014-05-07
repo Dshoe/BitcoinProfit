@@ -2,11 +2,13 @@ package com.devinshoe.bitcoinprofit.app;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.AssetManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.content.ClipboardManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -136,6 +138,12 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_changelog) {
             displayChangelogDialog();
             return true;
+        }
+        if (id == R.id.action_donate) {
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("wallet", "1ByqvCv3Drt84H8UR2TwJkPrGzdeXqT6LN");
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(getApplicationContext(), "Wallet address copied to clipboard", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
